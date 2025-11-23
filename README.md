@@ -1,2 +1,2 @@
 # Py-for-python-
-abcdefghijklmnop
+print("python")
