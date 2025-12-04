@@ -1,17 +1,34 @@
-
-#python program to find factorial of given number and sum of natural numbers
-def fact(n):
-   return 1 if (n==1 or n==0)else n*fact(n-1);
-def sum(n):
-   return 0 if (n==0)else (n-1);
-num=int(input("enter any number:"))
-print("1-to find the factorial,2-to find the sum 3-exit")
-opt=int(input("enter the option 1-3:"))
-if(opt==1):
-   print("factorial of ",num,"is:",fact(num))
-else:
-    if(opt==2):
-     print("sum of",num,"is:",sum(num))
-     else:
-         print("")
            
+ Function to calculate Simple Interest
+def simple_interest(p, r, t):
+    si = (p * r * t) / 100
+    return si
+
+# Function to calculate Compound Interest
+def compound_interest(p, r, t):
+    amount = p * (1 + r/100) ** t
+    ci = amount - p
+    return ci
+
+# Main program
+def main():
+    # Taking inputs from the user
+    principal = float(input("Enter Principal Amount: "))
+    rate = float(input("Enter Rate of Interest (%): "))
+    time = float(input("Enter Time (in years): "))
+
+    # Calculating interests
+    si = simple_interest(principal, rate, time)
+    ci = compound_interest(principal, rate, time)
+
+    # Difference
+    diff = ci - si
+
+    # Display results
+    print("\n---- Results ----")
+    print(f"Simple Interest: {si:.2f}")
+    print(f"Compound Interest: {ci:.2f}")
+    print(f"Difference (CI - SI): {diff:.2f}")
+
+# Call main function
+main()
