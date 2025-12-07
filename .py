@@ -1,13 +1,23 @@
 
-def bubble_sort(arr):
+ def selection_sort(arr):
     n = len(arr)
-    
-    # Traverse through all elements in the list
+
     for i in range(n):
-        # Last i elements are already in place
-        for j in range(0, n - i - 1):
-            # Swap if the element found is greater than the next element
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+        # Assume the current position has the minimum
+        min_index = i
+
+        # Check the rest of the array for a smaller element
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+
+        # Swap the found minimum element with the first element
+        arr[i], arr[min_index] = arr[min_index], arr[i]
 
     return arr
+
+
+# Example usage
+numbers = [64, 25, 12, 22, 11]
+sorted_numbers = selection_sort(numbers)
+print("Sorted array:", sorted_numbers)
