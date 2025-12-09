@@ -1,23 +1,12 @@
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
 
- def selection_sort(arr):
-    n = len(arr)
+        # Move elements of arr[0..i-1] that are greater than key
+        # to one position ahead of their current position
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
 
-    for i in range(n):
-        # Assume the current position has the minimum
-        min_index = i
-
-        # Check the rest of the array for a smaller element
-        for j in range(i + 1, n):
-            if arr[j] < arr[min_index]:
-                min_index = j
-
-        # Swap the found minimum element with the first element
-        arr[i], arr[min_index] = arr[min_index], arr[i]
-
-    return arr
-
-
-# Example usage
-numbers = [64, 25, 12, 22, 11]
-sorted_numbers = selection_sort(numbers)
-print("Sorted array:", sorted_numbers)
+        arr[j + 1] = key
