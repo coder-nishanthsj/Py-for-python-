@@ -1,1 +1,1 @@
-print("love coding")
+print(" coding")
