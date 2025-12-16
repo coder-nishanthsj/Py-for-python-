@@ -1,1 +1,1 @@
-I am the best
+balancing college and coding 
